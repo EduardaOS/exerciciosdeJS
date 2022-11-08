@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+    <style>
+        body{
+            background-color: black;
+            color: rgb(255, 255, 255);
+        }
+        #h{
+            text-align: center;
+            color: yellow;
+
+        }
+        .hh{
+            color: rgb(210, 157, 89);
+        }
+        #mouse{
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="h">EVENTOS</h1>
+    <h2 class="hh">onMouseOver:</h2>
+    <p>O onMouseOver, que em inglês quer dizer 'quando o mouse tiver por cima', detecta a ação do mouse estar sobre um determinado elemento da página.</p>
+    <br>
+    <h3 id="mouse" onmouseover="mouseOver()">Passe o mouse aqui, e veja a mágica</h3>
+    <br>
+    <p>No exemplo acima quando o mouse é passado na frase (que de início tem a cor roxa), logo se torna rosa.</p>
+
+<script>
+function mouseOver() {
+  document.getElementById("mouse").style.color = "#FF00BC";
+}
+</script>
+<br>
+    <h2 class="hh">onFocus:</h2>
+    <p>O evento onfocus ocorre quando um elemento recebe o foco.</p>
+
+    <button type="text" id="botao" onfocus="myFunctio(this)" onblur="blurFunction()">Clique aqui</button>
+
+        <p>Neste exemplo o botao se inicia na cor branca, porém depois que for clicado ele se torna rosa, e se clicado fora, se tornará amarelo. (para esse último passo usei o evento "onblur")</p>
+
+        <script>
+        function myFunctio(x) {
+        x.style.background = "#FF00BC";
+        }
+        function blurFunction(x) {
+        document.getElementById("botao").style.background = "yellow";
+        }
+        </script>
+<br>
+
+    <h2 class="hh">onChange:</h2>
+    <p>O evento onChange é utilizado para que seja realizada determinada ação após alguma mudança.</p>
+
+
+
+    <p>Selecione uma cor.</p>
+
+    <select id="cores" onchange="myFunction()">
+      <option value="Azul">Azul</option>
+      <option value="Violeta">Violeta</option>
+      <option value="Amarelo">Amarelo</option>
+      <option value="Verde">Verde</option>
+      <option value="Rosa">Rosa</option>
+      <option value="Preto">Preto</option>
+      <option value="Cinza">Cinza</option>
+      <option value="Vermelho">Vermelho</option>
+      <option value="Marrom">Marrom</option>
+    </select>
+    
+    <p id="a"></p>
+    
+    <script>
+    function myFunction() {
+      var x = document.getElementById("cores").value;
+      document.getElementById("a").innerHTML = "Sua cor selecionada foi: " + x;
+    }
+    </script>
+
+    <p>Toda vez que uma nova cor é escolhida, ela sempre é informada, não importa se foi mudada.</p>
+      
+    
+
+
+    
+</body>
+</html>
